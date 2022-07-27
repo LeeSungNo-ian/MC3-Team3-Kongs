@@ -209,7 +209,6 @@
 				A31C3F452882ABD3005A6F6E /* ReusableComponent */,
 				C05BF1E0287BC7A300C95E1B /* Base */,
 				C05BF1DF287BC79D00C95E1B /* Font */,
-				0AA1E7E128912D7C00AC0CE9 /* Secret.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -265,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				C05BF1E2287BC7C800C95E1B /* Constant.swift */,
+				0AA1E7E128912D7C00AC0CE9 /* Secret.swift */,
 				0AEF1FF92891BA21000E6E06 /* NetworkManager.swift */,
 			);
 			path = API;
