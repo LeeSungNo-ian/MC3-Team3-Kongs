@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0AA1E7DE288EE32A00AC0CE9 /* DancerDetailScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1E7DD288EE32A00AC0CE9 /* DancerDetailScheduleModel.swift */; };
 		0AA1E7E0288EE3F600AC0CE9 /* DancerDetailSchduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1E7DF288EE3F600AC0CE9 /* DancerDetailSchduleManager.swift */; };
+		0AA1E7E228912D7C00AC0CE9 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1E7E128912D7C00AC0CE9 /* Secret.swift */; };
 		0ADD3B7F288447B30074C496 /* DancerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADD3B7E288447B30074C496 /* DancerDetailViewController.swift */; };
 		97C17C86288738A300A510CA /* MainViewController+GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C17C85288738A300A510CA /* MainViewController+GenreCell.swift */; };
 		97C17C882888351A00A510CA /* MainViewController+DancerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C17C872888351A00A510CA /* MainViewController+DancerCell.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		0AA1E7DD288EE32A00AC0CE9 /* DancerDetailScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DancerDetailScheduleModel.swift; sourceTree = "<group>"; };
 		0AA1E7DF288EE3F600AC0CE9 /* DancerDetailSchduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DancerDetailSchduleManager.swift; sourceTree = "<group>"; };
+		0AA1E7E128912D7C00AC0CE9 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		0ADD3B7E288447B30074C496 /* DancerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DancerDetailViewController.swift; sourceTree = "<group>"; };
 		97C17C85288738A300A510CA /* MainViewController+GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+GenreCell.swift"; sourceTree = "<group>"; };
 		97C17C872888351A00A510CA /* MainViewController+DancerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+DancerCell.swift"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				A31C3F452882ABD3005A6F6E /* ReusableComponent */,
 				C05BF1E0287BC7A300C95E1B /* Base */,
 				C05BF1DF287BC79D00C95E1B /* Font */,
+				0AA1E7E128912D7C00AC0CE9 /* Secret.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				C7CE676228814D3C00C8F137 /* Weekday.swift in Sources */,
 				A37F02C7288842640027D3FC /* SearchDetailCell.swift in Sources */,
 				A3F1480D28882CA90025B822 /* UIImageView.swift in Sources */,
+				0AA1E7E228912D7C00AC0CE9 /* Secret.swift in Sources */,
 				C039DCC0287D94630007951D /* SubscriptionViewController.swift in Sources */,
 				C05BF1F6287BC7EF00C95E1B /* UIApplication.swift in Sources */,
 				C05BF1F9287BC7EF00C95E1B /* Date.swift in Sources */,

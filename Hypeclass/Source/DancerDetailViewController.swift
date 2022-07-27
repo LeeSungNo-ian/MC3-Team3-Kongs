@@ -189,7 +189,7 @@ class DancerDetailViewController: BaseViewController {
     
     func setupDatas() {
         dancerDataManager.makeDancerData()
-        dancerScheduleArray = dancerDataManager.fetchScheduleData()
+        dancerScheduleArray = dancerDataManager.getScheduleData()
     }
     
     func configureUI() {
