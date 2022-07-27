@@ -133,6 +133,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AC0063A2891C0E300241DFA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C05BF1E2287BC7C800C95E1B /* Constant.swift */,
+				0AA1E7E128912D7C00AC0CE9 /* Secret.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A31C3F452882ABD3005A6F6E /* ReusableComponent */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,8 +274,7 @@
 		C05BF206287BCA9E00C95E1B /* API */ = {
 			isa = PBXGroup;
 			children = (
-				C05BF1E2287BC7C800C95E1B /* Constant.swift */,
-				0AA1E7E128912D7C00AC0CE9 /* Secret.swift */,
+				0AC0063A2891C0E300241DFA /* Helpers */,
 				0AEF1FF92891BA21000E6E06 /* NetworkManager.swift */,
 				0AC006382891BFCF00241DFA /* NetworkError.swift */,
 			);
