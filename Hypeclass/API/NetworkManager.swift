@@ -7,8 +7,5 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case networkingError
-    case dataError
-    case parseError
-}
+
+
