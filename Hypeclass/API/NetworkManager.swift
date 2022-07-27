@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkManager {
+final class NetworkManager {
     typealias NetworkCompletion = (Result<[Item], NetworkError>) -> Void
     
     func fetchYoutubeData(completion: @escaping NetworkCompletion) {
@@ -17,7 +17,7 @@ class NetworkManager {
         }
     }
     
-    func performRequest(with urlString: String, completion: @escaping NetworkCompletion) {
+    private func performRequest(with urlString: String, completion: @escaping NetworkCompletion) {
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
@@ -40,7 +40,7 @@ class NetworkManager {
         task.resume()
     }
     
-    func parseJSON(_ youtubeData: Data) -> [Item]? {
+    private func parseJSON(_ youtubeData: Data) -> [Item]? {
         do {
             let youtubeData = try JSONDecoder().decode(YoutubeModelAPI.self, from: youtubeData)
             return youtubeData.items
