@@ -55,3 +55,4 @@ struct Thumbnail: Codable {
     let width: Int
     let height: Int
 }
+

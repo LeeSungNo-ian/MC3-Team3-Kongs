@@ -16,6 +16,9 @@ class DancerDetailViewController: BaseViewController {
     var dancerScheduleArray: [DancerDetailScheduleModel] = []
     var dancerDataManager = DancerDetailSchduleManager()
     
+    var networkManager = NetworkManager()
+    var thumbnailArrays: [Item] = []
+    
     let dancerDetailScrollView: UIScrollView! = UIScrollView()
     let dancerDetailContentView: UIView! = UIView()
 
@@ -128,6 +131,19 @@ class DancerDetailViewController: BaseViewController {
         return label
     }()
     
+    private lazy var thumbNailCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .red
+        cv.register(ThumbNailCell.self, forCellWithReuseIdentifier: thumbNailID)
+        cv.dataSource = self
+        cv.delegate = self
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        return cv
+    }()
+    
     private lazy var mockUpThumbNail: UIImageView = {
         let imageView = UIImageView()
         let dancerProfileImage: UIImage = UIImage(systemName: "person")!
@@ -161,6 +177,7 @@ class DancerDetailViewController: BaseViewController {
     }()
         
     private let weekCellID = "week"
+    private let thumbNailID = "thumNail"
     
     private var selectedDate = Date()
     
@@ -169,8 +186,10 @@ class DancerDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        setupDatas()
+        setupScheduleDatas()
+        setupNetworkDatas()
     }
+
     //MARK: - Selectors
     
     @objc func instaImageTapped(_ sender: UITapGestureRecognizer) {
@@ -187,9 +206,20 @@ class DancerDetailViewController: BaseViewController {
     
     //MARK: - Helpers
     
-    func setupDatas() {
+    func setupScheduleDatas() {
         dancerDataManager.makeDancerData()
         dancerScheduleArray = dancerDataManager.fetchScheduleData()
+    }
+    
+    func setupNetworkDatas() {
+        networkManager.fetchYoutubeData { result in
+            switch result {
+            case Result.success(let thumbNailData):
+                print("데이터를 제대로 받았음")
+            case Result.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func configureUI() {
@@ -278,29 +308,43 @@ class DancerDetailViewController: BaseViewController {
 
 extension DancerDetailViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 7
+        if collectionView == self.scheduleCollectionView {
+            return 7
+        } else {
+            return 7
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if collectionView == self.scheduleCollectionView {
+            return 1
+        } else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: weekCellID, for: indexPath) as! WeeklyScheduleCell
-            cell.weekdayLabel.text = Weekday.allCases[indexPath.section].rawValue
-            cell.dayLabel.text = cell.dayString(date: selectedDate, dayNum: indexPath.section)
-            cell.studioLabel.text = dancerScheduleArray[indexPath.row].studioLabel
-            cell.startTimeLabel.text = dancerScheduleArray[indexPath.row].startTimeLabel
-            cell.endTimeLabel.text = dancerScheduleArray[indexPath.row].endTimeLabel
-            return cell
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: weekCellID, for: indexPath) as! WeeklyScheduleCell
-            cell.backgroundColor = .purple
-            return cell
+//        if collectionView == self.scheduleCollectionView {
+            if indexPath.row == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: weekCellID, for: indexPath) as! WeeklyScheduleCell
+                cell.weekdayLabel.text = Weekday.allCases[indexPath.section].rawValue
+                cell.dayLabel.text = cell.dayString(date: selectedDate, dayNum: indexPath.section)
+                cell.studioLabel.text = dancerScheduleArray[indexPath.row].studioLabel
+                cell.startTimeLabel.text = dancerScheduleArray[indexPath.row].startTimeLabel
+                cell.endTimeLabel.text = dancerScheduleArray[indexPath.row].endTimeLabel
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: weekCellID, for: indexPath) as! WeeklyScheduleCell
+                cell.backgroundColor = .purple
+                return cell
+            }
         }
-    }
 }
+//        } else {
+//            if indexPath.row == 0 {
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thumbNailID, for: indexPath) as! ThumbNailCell
+////                cell.
+
 
 extension DancerDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
