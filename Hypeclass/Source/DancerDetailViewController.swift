@@ -216,11 +216,15 @@ class DancerDetailViewController: BaseViewController {
             switch result {
             case Result.success(let thumbNailData):
                 print("데이터를 제대로 받았음")
+                self.thumbnailArrays = thumbNailData
+                DispatchQueue.main.async {
+                    self.thumbNailCollectionView.reloadData()
+                }
             case Result.failure(let error):
                 print(error.localizedDescription)
             }
         }
-    }
+      }
     
     func configureUI() {
         let contentViewHeight = dancerDetailContentView.heightAnchor.constraint(equalToConstant: 1000)
