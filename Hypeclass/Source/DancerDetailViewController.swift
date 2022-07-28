@@ -134,7 +134,7 @@ class DancerDetailViewController: BaseViewController {
     private lazy var thumbNailCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        layout.minimumLineSpacing = 10
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .red
         cv.register(ThumbNailCell.self, forCellWithReuseIdentifier: thumbNailID)
@@ -142,15 +142,6 @@ class DancerDetailViewController: BaseViewController {
         cv.delegate = self
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
-    }()
-    
-    private lazy var mockUpThumbNail: UIImageView = {
-        let imageView = UIImageView()
-        let dancerProfileImage: UIImage = UIImage(systemName: "person")!
-        imageView.image = dancerProfileImage
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
     }()
     
     private lazy var introduceContentLabel: UILabel = {
@@ -224,7 +215,7 @@ class DancerDetailViewController: BaseViewController {
                 print(error.localizedDescription)
             }
         }
-      }
+    }
     
     func configureUI() {
         let contentViewHeight = dancerDetailContentView.heightAnchor.constraint(equalToConstant: 1000)
@@ -296,13 +287,15 @@ class DancerDetailViewController: BaseViewController {
         videoContentLabel.leadingAnchor.constraint(equalTo: scheduleContentLabel.leadingAnchor, constant: 0).isActive = true
         videoContentLabel.topAnchor.constraint(equalTo: scheduleCollectionView.bottomAnchor, constant: 25).isActive = true
             
-        dancerDetailContentView.addSubview(mockUpThumbNail)
-        mockUpThumbNail.leadingAnchor.constraint(equalTo: videoContentLabel.leadingAnchor, constant: 0).isActive = true
-        mockUpThumbNail.topAnchor.constraint(equalTo: videoContentLabel.bottomAnchor, constant: 10).isActive = true
+        dancerDetailContentView.addSubview(thumbNailCollectionView)
+        thumbNailCollectionView.leadingAnchor.constraint(equalTo: videoContentLabel.leadingAnchor, constant: 0).isActive = true
+        thumbNailCollectionView.trailingAnchor.constraint(equalTo: videoContentLabel.trailingAnchor, constant: 0).isActive = true
+        thumbNailCollectionView.topAnchor.constraint(equalTo: videoContentLabel.bottomAnchor, constant: 10).isActive = true
+        thumbNailCollectionView.heightAnchor.constraint(equalToConstant: 160).isActive = true
             
         dancerDetailContentView.addSubview(introduceContentLabel)
-        introduceContentLabel.leadingAnchor.constraint(equalTo: mockUpThumbNail.leadingAnchor, constant: 0).isActive = true
-        introduceContentLabel.topAnchor.constraint(equalTo: mockUpThumbNail.bottomAnchor, constant: 25).isActive = true
+        introduceContentLabel.leadingAnchor.constraint(equalTo: thumbNailCollectionView.leadingAnchor, constant: 0).isActive = true
+        introduceContentLabel.topAnchor.constraint(equalTo: thumbNailCollectionView.bottomAnchor, constant: 25).isActive = true
             
         dancerDetailContentView.addSubview(introduceContent)
         introduceContent.leadingAnchor.constraint(equalTo: introduceContentLabel.leadingAnchor, constant: 0).isActive = true
@@ -315,7 +308,7 @@ extension DancerDetailViewController: UICollectionViewDataSource {
         if collectionView == self.scheduleCollectionView {
             return 7
         } else {
-            return 7
+            return thumbnailArrays.count
         }
     }
     
@@ -323,12 +316,12 @@ extension DancerDetailViewController: UICollectionViewDataSource {
         if collectionView == self.scheduleCollectionView {
             return 1
         } else {
-            return 1
+            return thumbnailArrays.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if collectionView == self.scheduleCollectionView {
+        if collectionView == self.scheduleCollectionView {
             if indexPath.row == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: weekCellID, for: indexPath) as! WeeklyScheduleCell
                 cell.weekdayLabel.text = Weekday.allCases[indexPath.section].rawValue
@@ -342,13 +335,16 @@ extension DancerDetailViewController: UICollectionViewDataSource {
                 cell.backgroundColor = .purple
                 return cell
             }
+        } else if collectionView == self.thumbNailCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thumbNailID, for: indexPath) as! ThumbNailCell
+            cell.imageUrl = thumbnailArrays[indexPath.row].snippet.thumbnails.standard?.url
+            cell.youtubeTitle.text = thumbnailArrays[indexPath.row].snippet.title
+            return cell
+        } else {
+            return UICollectionViewCell()
         }
+    }
 }
-//        } else {
-//            if indexPath.row == 0 {
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thumbNailID, for: indexPath) as! ThumbNailCell
-////                cell.
-
 
 extension DancerDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

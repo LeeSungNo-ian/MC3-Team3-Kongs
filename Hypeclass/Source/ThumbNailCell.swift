@@ -13,8 +13,6 @@ class ThumbNailCell: UICollectionViewCell {
     
     private lazy var youtubeThumbNail: UIImageView = {
         let imageView = UIImageView()
-        let dancerProfileImage: UIImage = UIImage(systemName: "person")!
-        imageView.image = dancerProfileImage
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
