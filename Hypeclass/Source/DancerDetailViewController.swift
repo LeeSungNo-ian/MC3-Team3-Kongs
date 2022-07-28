@@ -128,7 +128,7 @@ class DancerDetailViewController: BaseViewController {
         return label
     }()
     
-    private lazy var mockUpThumNail: UIImageView = {
+    private lazy var mockUpThumbNail: UIImageView = {
         let imageView = UIImageView()
         let dancerProfileImage: UIImage = UIImage(systemName: "person")!
         imageView.image = dancerProfileImage
@@ -262,13 +262,13 @@ class DancerDetailViewController: BaseViewController {
         videoContentLabel.leadingAnchor.constraint(equalTo: scheduleContentLabel.leadingAnchor, constant: 0).isActive = true
         videoContentLabel.topAnchor.constraint(equalTo: scheduleCollectionView.bottomAnchor, constant: 25).isActive = true
             
-        dancerDetailContentView.addSubview(mockUpThumNail)
-        mockUpThumNail.leadingAnchor.constraint(equalTo: videoContentLabel.leadingAnchor, constant: 0).isActive = true
-        mockUpThumNail.topAnchor.constraint(equalTo: videoContentLabel.bottomAnchor, constant: 10).isActive = true
+        dancerDetailContentView.addSubview(mockUpThumbNail)
+        mockUpThumbNail.leadingAnchor.constraint(equalTo: videoContentLabel.leadingAnchor, constant: 0).isActive = true
+        mockUpThumbNail.topAnchor.constraint(equalTo: videoContentLabel.bottomAnchor, constant: 10).isActive = true
             
         dancerDetailContentView.addSubview(introduceContentLabel)
-        introduceContentLabel.leadingAnchor.constraint(equalTo: mockUpThumNail.leadingAnchor, constant: 0).isActive = true
-        introduceContentLabel.topAnchor.constraint(equalTo: mockUpThumNail.bottomAnchor, constant: 25).isActive = true
+        introduceContentLabel.leadingAnchor.constraint(equalTo: mockUpThumbNail.leadingAnchor, constant: 0).isActive = true
+        introduceContentLabel.topAnchor.constraint(equalTo: mockUpThumbNail.bottomAnchor, constant: 25).isActive = true
             
         dancerDetailContentView.addSubview(introduceContent)
         introduceContent.leadingAnchor.constraint(equalTo: introduceContentLabel.leadingAnchor, constant: 0).isActive = true
