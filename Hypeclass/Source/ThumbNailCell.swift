@@ -11,15 +11,7 @@ class ThumbNailCell: UICollectionViewCell {
     
     //MARK: - Properties
     
-//    var youtubeModelAPI: YoutubeModelAPI? {
-//        didSet {
-//            guard var youtubeModelAPI = youtubeModelAPI else { return }
-//            mockUpThumbNail.image = youtubeModelAPI.memberImage
-//            youtubeTitle.text = youtubeModelAPI.
-//        }
-//    }
-    
-    private lazy var mockUpThumbNail: UIImageView = {
+    private lazy var youtubeThumbNail: UIImageView = {
         let imageView = UIImageView()
         let dancerProfileImage: UIImage = UIImage(systemName: "person")!
         imageView.image = dancerProfileImage
@@ -50,12 +42,14 @@ class ThumbNailCell: UICollectionViewCell {
     //MARK: - Helpers
     
     private func setLayout() {
-        contentView.addSubview(mockUpThumbNail)
-        mockUpThumbNail.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        mockUpThumbNail.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        contentView.addSubview(youtubeThumbNail)
+        youtubeThumbNail.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        youtubeThumbNail.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        youtubeThumbNail.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        youtubeThumbNail.widthAnchor.constraint(equalToConstant: 120).isActive = true
         
         contentView.addSubview(youtubeTitle)
-        youtubeTitle.topAnchor.constraint(equalTo: mockUpThumbNail.bottomAnchor, constant: 10).isActive = true
-        mockUpThumbNail.leadingAnchor.constraint(equalTo: mockUpThumbNail.leadingAnchor).isActive = true
+        youtubeTitle.topAnchor.constraint(equalTo: youtubeThumbNail.bottomAnchor, constant: 10).isActive = true
+        youtubeTitle.leadingAnchor.constraint(equalTo: youtubeThumbNail.leadingAnchor).isActive = true
     }
 }
