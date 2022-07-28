@@ -28,11 +28,18 @@ class ThumbNailCell: UICollectionViewCell {
         return label
     }()
     
+    var imageUrl: String? {
+        didSet {
+            loadImage()
+        }
+    }
+    
     //MARK: - LifeCycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
+        youtubeThumbNail.contentMode = .scaleToFill
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +47,16 @@ class ThumbNailCell: UICollectionViewCell {
     }
     
     //MARK: - Helpers
+    
+    private func loadImage() {
+        guard let urlString = self.imageUrl, let url = URL(string: urlString) else { return }
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: url) else { return }
+            DispatchQueue.main.async {
+                self.youtubeThumbNail.image = UIImage(data: data)
+            }
+        }
+    }
     
     private func setLayout() {
         contentView.addSubview(youtubeThumbNail)
