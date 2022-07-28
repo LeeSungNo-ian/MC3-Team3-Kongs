@@ -34,6 +34,12 @@ class ThumbNailCell: UICollectionViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.youtubeThumbNail.image = nil
+    }
+    
     //MARK: - LifeCycle
     
     override init(frame: CGRect) {
