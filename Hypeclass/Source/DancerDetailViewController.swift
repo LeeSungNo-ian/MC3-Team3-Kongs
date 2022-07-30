@@ -149,28 +149,28 @@ class DancerDetailViewController: BaseViewController {
         return cv
     }()
     
-    private lazy var introduceContentLabel: UILabel = {
-        let label = UILabel()
-        label.text = "댄서 소개"
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let ment = """
-        안녕하세요. 10년차 댄서로 활동중인 WOOTAE 입니다!
-    """
-    
-    private lazy var introduceContent: UILabel = {
-        let label = UILabel()
-        label.text = ment
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+//    private lazy var introduceContentLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "댄서 소개"
+//        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+//        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        return label
+//    }()
+//
+//    let ment = """
+//        안녕하세요. 10년차 댄서로 활동중인 WOOTAE 입니다!
+//    """
+//
+//    private lazy var introduceContent: UILabel = {
+//        let label = UILabel()
+//        label.text = ment
+//        label.numberOfLines = 0
+//        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+//        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        return label
+//    }()
         
     private let weekCellID = "week"
     private let thumbNailID = "thumNail"
@@ -302,13 +302,13 @@ class DancerDetailViewController: BaseViewController {
         thumbNailCollectionView.topAnchor.constraint(equalTo: videoContentLabel.bottomAnchor, constant: 10).isActive = true
         thumbNailCollectionView.heightAnchor.constraint(equalToConstant: 220).isActive = true
             
-        dancerDetailContentView.addSubview(introduceContentLabel)
-        introduceContentLabel.leadingAnchor.constraint(equalTo: thumbNailCollectionView.leadingAnchor, constant: 0).isActive = true
-        introduceContentLabel.topAnchor.constraint(equalTo: thumbNailCollectionView.bottomAnchor, constant: 25).isActive = true
-            
-        dancerDetailContentView.addSubview(introduceContent)
-        introduceContent.leadingAnchor.constraint(equalTo: introduceContentLabel.leadingAnchor, constant: 0).isActive = true
-        introduceContent.topAnchor.constraint(equalTo: introduceContentLabel.bottomAnchor, constant: 25).isActive = true
+//        dancerDetailContentView.addSubview(introduceContentLabel)
+//        introduceContentLabel.leadingAnchor.constraint(equalTo: thumbNailCollectionView.leadingAnchor, constant: 0).isActive = true
+//        introduceContentLabel.topAnchor.constraint(equalTo: thumbNailCollectionView.bottomAnchor, constant: 25).isActive = true
+//            
+//        dancerDetailContentView.addSubview(introduceContent)
+//        introduceContent.leadingAnchor.constraint(equalTo: introduceContentLabel.leadingAnchor, constant: 0).isActive = true
+//        introduceContent.topAnchor.constraint(equalTo: introduceContentLabel.bottomAnchor, constant: 25).isActive = true
     }
 }
 
