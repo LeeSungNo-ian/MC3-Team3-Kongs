@@ -20,7 +20,7 @@ class ThumbNailCell: UICollectionViewCell {
     
     let youtubeTitle: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.font = .systemFont(ofSize: 13, weight: .semibold)
         label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,7 +44,6 @@ class ThumbNailCell: UICollectionViewCell {
         super.init(frame: frame)
         setLayout()
         youtubeThumbNail.contentMode = .scaleToFill
-//        backgroundColor = .red
     }
     
     required init?(coder: NSCoder) {
@@ -70,7 +69,6 @@ class ThumbNailCell: UICollectionViewCell {
         youtubeThumbNail.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         youtubeThumbNail.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         youtubeThumbNail.heightAnchor.constraint(equalToConstant: 180).isActive = true
-        
         
         contentView.addSubview(youtubeTitle)
         youtubeTitle.topAnchor.constraint(equalTo: youtubeThumbNail.bottomAnchor, constant: 10).isActive = true

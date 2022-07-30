@@ -139,10 +139,9 @@ class DancerDetailViewController: BaseViewController {
         layout.estimatedItemSize = CGSize(width: cellWidth, height: cellWidth * 1)
 //        layout.itemSize = CGSize(width: cellWidth, height: cellWidth * 0.8)
 //        self.thumbNailCollectionView.collectionViewLayout = layout
-        
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.contentInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 90)
-        cv.backgroundColor = .red
+        cv.backgroundColor = .clear
         cv.register(ThumbNailCell.self, forCellWithReuseIdentifier: thumbNailID)
         cv.dataSource = self
 //        cv.delegate = self
@@ -219,6 +218,10 @@ class DancerDetailViewController: BaseViewController {
                 }
             case Result.failure(let error):
                 print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.thumbNailCollectionView.isHidden = true
+                    self.videoContentLabel.isHidden = true
+                }
             }
         }
     }
@@ -345,7 +348,7 @@ extension DancerDetailViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thumbNailID, for: indexPath) as! ThumbNailCell
             cell.imageUrl = thumbnailArrays[indexPath.row].snippet.thumbnails.maxres?.url
             cell.youtubeTitle.text = thumbnailArrays[indexPath.row].snippet.title
-            cell.backgroundColor = .blue
+//            cell.backgroundColor = .blue
             return cell
         } else {
             return UICollectionViewCell()
