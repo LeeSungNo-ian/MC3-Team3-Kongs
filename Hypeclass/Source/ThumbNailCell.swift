@@ -18,7 +18,7 @@ class ThumbNailCell: UICollectionViewCell {
         return imageView
     }()
     
-    let youtubeTitle: UILabel = {
+    lazy var youtubeTitle: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .semibold)
         label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
@@ -27,6 +27,15 @@ class ThumbNailCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+//    private lazy var playButtonIamge: UIImageView = {
+//        let imageView = UIImageView()
+//        let dancerProfileImage: UIImage = UIImage(named: "playButton")!
+//        imageView.image = dancerProfileImage
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        return imageView
+//    }()
     
     var imageUrl: String? {
         didSet {
@@ -76,5 +85,10 @@ class ThumbNailCell: UICollectionViewCell {
         youtubeTitle.topAnchor.constraint(equalTo: youtubeThumbNail.bottomAnchor, constant: 10).isActive = true
         youtubeTitle.leadingAnchor.constraint(equalTo: youtubeThumbNail.leadingAnchor).isActive = true
         youtubeTitle.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        
+//        contentView.addSubview(playButtonIamge)
+//        playButtonIamge.trailingAnchor.constraint(equalTo: youtubeThumbNail.trailingAnchor, constant: -10).isActive = true
+//        playButtonIamge.topAnchor.constraint(equalTo: youtubeThumbNail.topAnchor, constant: 30).isActive = true
+//        playButtonIamge.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
 }

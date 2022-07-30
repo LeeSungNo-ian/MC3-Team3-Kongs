@@ -9,7 +9,7 @@ import Foundation
 
 
 public enum YouTubeAPI {
-    static let requestURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCx-DjQ3m3Al6oFKZHmycO9w&maxResults=4&order=date&key="
+    static let requestURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCx-DjQ3m3Al6oFKZHmycO9w&maxResults=5&order=date&key="
 }
 
 
