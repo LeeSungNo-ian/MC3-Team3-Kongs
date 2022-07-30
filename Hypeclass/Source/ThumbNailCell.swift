@@ -22,6 +22,8 @@ class ThumbNailCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .semibold)
         label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
+        label.numberOfLines = 1
+        label.preferredMaxLayoutWidth = CGFloat((Device.width - (50)) * 0.8)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

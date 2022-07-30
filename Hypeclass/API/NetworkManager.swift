@@ -11,7 +11,7 @@ final class NetworkManager {
     typealias NetworkCompletion = (Result<[Item], NetworkError>) -> Void
     
     func fetchYoutubeData(completion: @escaping NetworkCompletion) {
-        let urlString = "https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&channelId=UCsNfSIKbJ9QBAegU-2BnlXA&key=AIzaSyCbHjgfcmHGhJB-yeALi7rSvtPu3vaCy2o"
+        let urlString = "\(YouTubeAPI.requestURL)\(Secret.youtubeAppKey)"
         performRequest(with: urlString) { result in
             completion(result)
         }
@@ -46,7 +46,6 @@ final class NetworkManager {
         do {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            
             let youtubeData = try decoder.decode(YoutubeModelAPI.self, from: youtubeData)
             return youtubeData.items
         } catch {

@@ -346,7 +346,7 @@ extension DancerDetailViewController: UICollectionViewDataSource {
             }
         } else if collectionView == self.thumbNailCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thumbNailID, for: indexPath) as! ThumbNailCell
-            cell.imageUrl = thumbnailArrays[indexPath.row].snippet.thumbnails.maxres?.url
+            cell.imageUrl = thumbnailArrays[indexPath.row].snippet.thumbnails.high.url
             cell.youtubeTitle.text = thumbnailArrays[indexPath.row].snippet.title
 //            cell.backgroundColor = .blue
             return cell
@@ -355,20 +355,6 @@ extension DancerDetailViewController: UICollectionViewDataSource {
         }
     }
 }
-
-//extension DancerDetailViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == self.scheduleCollectionView {
-//            let estimateHeight = collectionView.frame.height * 0.3
-//            let estimateWidth = (collectionView.frame.width * 0.15)
-//            return CGSize(width: estimateWidth, height: estimateHeight)
-//        } else {
-//            let estimateHeight = collectionView.frame.height
-//            let estimateWidth = collectionView.frame.width
-//            return CGSize(width: estimateWidth, height: estimateHeight)
-//        }
-//    }
-//}
 
 //MARK: - Preview
 
