@@ -13,14 +13,14 @@ class ThumbNailCell: UICollectionViewCell {
     
     private lazy var youtubeThumbNail: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let youtubeTitle: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.font = .systemFont(ofSize: 12, weight: .medium)
         label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,6 +44,7 @@ class ThumbNailCell: UICollectionViewCell {
         super.init(frame: frame)
         setLayout()
         youtubeThumbNail.contentMode = .scaleToFill
+//        backgroundColor = .red
     }
     
     required init?(coder: NSCoder) {
@@ -66,9 +67,10 @@ class ThumbNailCell: UICollectionViewCell {
     private func setLayout() {
         contentView.addSubview(youtubeThumbNail)
         youtubeThumbNail.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        youtubeThumbNail.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        youtubeThumbNail.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        youtubeThumbNail.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        youtubeThumbNail.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        youtubeThumbNail.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        youtubeThumbNail.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        
         
         contentView.addSubview(youtubeTitle)
         youtubeTitle.topAnchor.constraint(equalTo: youtubeThumbNail.bottomAnchor, constant: 10).isActive = true
