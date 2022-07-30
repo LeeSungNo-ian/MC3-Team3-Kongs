@@ -75,5 +75,6 @@ class ThumbNailCell: UICollectionViewCell {
         contentView.addSubview(youtubeTitle)
         youtubeTitle.topAnchor.constraint(equalTo: youtubeThumbNail.bottomAnchor, constant: 10).isActive = true
         youtubeTitle.leadingAnchor.constraint(equalTo: youtubeThumbNail.leadingAnchor).isActive = true
+        youtubeTitle.widthAnchor.constraint(equalToConstant: 250).isActive = true
     }
 }

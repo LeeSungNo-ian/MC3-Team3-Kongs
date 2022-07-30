@@ -348,7 +348,7 @@ extension DancerDetailViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: thumbNailID, for: indexPath) as! ThumbNailCell
             cell.imageUrl = thumbnailArrays[indexPath.row].snippet.thumbnails.high.url
             cell.youtubeTitle.text = thumbnailArrays[indexPath.row].snippet.title
-//            cell.backgroundColor = .blue
+            cell.backgroundColor = .clear
             return cell
         } else {
             return UICollectionViewCell()
