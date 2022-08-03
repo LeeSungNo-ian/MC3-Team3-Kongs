@@ -10,7 +10,6 @@
 		0A6D547528928013006CAAD2 /* ThumbNailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D547428928013006CAAD2 /* ThumbNailCell.swift */; };
 		0AA1E7DE288EE32A00AC0CE9 /* DancerDetailScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1E7DD288EE32A00AC0CE9 /* DancerDetailScheduleModel.swift */; };
 		0AA1E7E0288EE3F600AC0CE9 /* DancerDetailSchduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1E7DF288EE3F600AC0CE9 /* DancerDetailSchduleManager.swift */; };
-		0AA1E7E228912D7C00AC0CE9 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1E7E128912D7C00AC0CE9 /* Secret.swift */; };
 		0AA1E8172891A16B00AC0CE9 /* YoutubeModelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1E8162891A16B00AC0CE9 /* YoutubeModelAPI.swift */; };
 		0AC006392891BFCF00241DFA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC006382891BFCF00241DFA /* NetworkError.swift */; };
 		0ADD3B7F288447B30074C496 /* DancerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADD3B7E288447B30074C496 /* DancerDetailViewController.swift */; };
@@ -34,7 +33,6 @@
 		C05BF1D2287BC33200C95E1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05BF1D1287BC33200C95E1B /* Assets.xcassets */; };
 		C05BF1D5287BC33200C95E1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05BF1D3287BC33200C95E1B /* LaunchScreen.storyboard */; };
 		C05BF1DD287BC60600C95E1B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BF1DC287BC60600C95E1B /* MainViewController.swift */; };
-		C05BF1E3287BC7C800C95E1B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BF1E2287BC7C800C95E1B /* Constant.swift */; };
 		C05BF1F1287BC7EF00C95E1B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BF1E6287BC7EF00C95E1B /* UIViewController.swift */; };
 		C05BF1F2287BC7EF00C95E1B /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BF1E7287BC7EF00C95E1B /* UITextField.swift */; };
 		C05BF1F3287BC7EF00C95E1B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BF1E8287BC7EF00C95E1B /* UIView.swift */; };
@@ -68,7 +66,6 @@
 		0A6D547428928013006CAAD2 /* ThumbNailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbNailCell.swift; sourceTree = "<group>"; };
 		0AA1E7DD288EE32A00AC0CE9 /* DancerDetailScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DancerDetailScheduleModel.swift; sourceTree = "<group>"; };
 		0AA1E7DF288EE3F600AC0CE9 /* DancerDetailSchduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DancerDetailSchduleManager.swift; sourceTree = "<group>"; };
-		0AA1E7E128912D7C00AC0CE9 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		0AA1E8162891A16B00AC0CE9 /* YoutubeModelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeModelAPI.swift; sourceTree = "<group>"; };
 		0AC006382891BFCF00241DFA /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0ADD3B7E288447B30074C496 /* DancerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DancerDetailViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +91,6 @@
 		C05BF1D4287BC33200C95E1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C05BF1D6287BC33200C95E1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C05BF1DC287BC60600C95E1B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		C05BF1E2287BC7C800C95E1B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C05BF1E6287BC7EF00C95E1B /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C05BF1E7287BC7EF00C95E1B /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C05BF1E8287BC7EF00C95E1B /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -135,15 +131,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0AC0063A2891C0E300241DFA /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C05BF1E2287BC7C800C95E1B /* Constant.swift */,
-				0AA1E7E128912D7C00AC0CE9 /* Secret.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		A31C3F452882ABD3005A6F6E /* ReusableComponent */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +263,6 @@
 		C05BF206287BCA9E00C95E1B /* API */ = {
 			isa = PBXGroup;
 			children = (
-				0AC0063A2891C0E300241DFA /* Helpers */,
 				0AEF1FF92891BA21000E6E06 /* NetworkManager.swift */,
 				0AC006382891BFCF00241DFA /* NetworkError.swift */,
 			);
@@ -427,7 +413,6 @@
 				C05BF1FD287BC88400C95E1B /* IndicatorView.swift in Sources */,
 				C05BF1F4287BC7EF00C95E1B /* UIFont.swift in Sources */,
 				A38A4C57287E97B900614E94 /* SearchViewController.swift in Sources */,
-				C05BF1E3287BC7C800C95E1B /* Constant.swift in Sources */,
 				C08A10B22883BCC1009A38E7 /* MockDataSet.swift in Sources */,
 				A31C3F472882AC38005A6F6E /* Separator.swift in Sources */,
 				A31C3F4428828B96005A6F6E /* SearchBar.swift in Sources */,
@@ -441,7 +426,6 @@
 				C7CE676228814D3C00C8F137 /* Weekday.swift in Sources */,
 				A37F02C7288842640027D3FC /* SearchDetailCell.swift in Sources */,
 				A3F1480D28882CA90025B822 /* UIImageView.swift in Sources */,
-				0AA1E7E228912D7C00AC0CE9 /* Secret.swift in Sources */,
 				C039DCC0287D94630007951D /* SubscriptionViewController.swift in Sources */,
 				C05BF1F6287BC7EF00C95E1B /* UIApplication.swift in Sources */,
 				C05BF1F9287BC7EF00C95E1B /* Date.swift in Sources */,
